@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_api_connect_instances,api_connect_instances,model_api_connect_instances,base.group_system,1,1,1,1
+access_api_connect_history,api_connect_history,model_api_connect_history,base.group_system,1,1,1,1
+access_api_endpoint_config,api_endpoint_config,model_api_endpoint_config,base.group_system,1,1,1,1
+access_select_delivery_carrier_wizard,select_delivery_carrier_wizard,model_select_delivery_carrier_wizard,base.group_system,1,1,1,1
+
