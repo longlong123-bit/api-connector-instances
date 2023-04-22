@@ -1,11 +1,8 @@
 {
     'name': 'API Connect Instances',
     'version': '13.0.1.0',
-    'summary': 'Connect Odoo Application with Viettel Post',
-    'description': """
-        The Odoo Viettel Post Connector module is an integrated product between the odoo application and the carrier Viettel Post. 
-        The application provides features, which through the api to manipulate directly into the dashboard of Viettel Post.
-    """,
+    'summary': 'The API Connect Instance module is a pre-built integration tool that enables easy integration of various shipping modules. It serves as an extensible solution for integrating shipping modules seamlessly.',
+    'description': """""",
     'category': 'Inventory/Delivery Connector',
     'support': 'odoo.tangerine@gmail.com',
     'author': 'Tangerine',
@@ -19,6 +16,7 @@
         'views/api_endpoint_config_views.xml',
         'views/menus.xml'
     ],
+    'images': ['static/description/thumbnail.png'],
     'auto_install': False,
     'application': False
 }
