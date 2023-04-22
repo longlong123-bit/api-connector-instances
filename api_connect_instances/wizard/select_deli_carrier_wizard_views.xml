@@ -11,7 +11,7 @@
                     </h1>
                 </div>
                 <group>
-                    <field name="deli_carrier_id" options="{'no_create_edit': True, 'no_open': True}"/>
+                    <field name="carrier_id" options="{'no_create_edit': True, 'no_open': True}"/>
                 </group>
                 <footer>
                     <button string="Cancel" class="btn-secondary" special="cancel"/>

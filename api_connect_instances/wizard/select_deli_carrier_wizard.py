@@ -14,7 +14,7 @@ class SelectDeliveryCarrierWizard(models.TransientModel):
         return values
 
     deli_order_id = fields.Many2one('stock.picking', required=True, readonly=True)
-    deli_carrier_id = fields.Many2one('delivery.carrier', required=True)
+    carrier_id = fields.Many2one('delivery.carrier', required=True)
 
     def action_assign_delivery(self):
         raise NotImplementedError(_(f'Subclass needs to be implemented this static method: action_assign_delivery.'))
