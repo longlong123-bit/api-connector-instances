@@ -5,8 +5,8 @@
         <field name="model">api.connect.instances</field>
         <field name="arch" type="xml">
             <form string="Connection Instance">
-                <header>
-                    <button type="object" name="get_owner_token" string="Get token"  class="oe_highlight"/>
+                <header class="o_header_extend">
+
                 </header>
                 <sheet>
                     <div name="button_box" class="oe_button_box">
