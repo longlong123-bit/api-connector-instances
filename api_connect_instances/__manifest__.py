@@ -1,6 +1,6 @@
 {
     'name': 'API Connect Instances',
-    'version': '13.0.1.0',
+    'version': '15.0.1.0',
     'summary': 'The API Connect Instance module is a pre-built integration tool that enables easy integration of various shipping modules. It serves as an extensible solution for integrating shipping modules seamlessly.',
     'description': """""",
     'category': 'Inventory/Delivery Connector',
