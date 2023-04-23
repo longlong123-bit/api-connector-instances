@@ -16,7 +16,7 @@
         'views/api_endpoint_config_views.xml',
         'views/menus.xml'
     ],
-    'images': ['static/description/thumbnail.png'],
+    'images': ['static/description/thumbnail.gif'],
     'auto_install': False,
     'application': False
 }
