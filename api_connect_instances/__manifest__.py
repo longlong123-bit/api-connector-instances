@@ -7,10 +7,12 @@
     'support': 'odoo.tangerine@gmail.com',
     'author': 'Tangerine',
     'license': 'OPL-1',
-    'depends': ['base', 'mail'],
+    'depends': ['base', 'mail', 'stock', 'delivery'],
     'data': [
         'security/ir.model.access.csv',
         'wizard/select_deli_carrier_wizard_views.xml',
+        'views/stock_picking_views.xml',
+        'views/res_partner_views.xml',
         'views/api_connect_instances_views.xml',
         'views/api_connect_history_views.xml',
         'views/api_endpoint_config_views.xml',

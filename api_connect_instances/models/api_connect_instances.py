@@ -1,7 +1,7 @@
 import logging
 import requests
-
-from odoo import fields, models, _
+import base64
+from odoo import fields, models, _, api, modules, tools
 from odoo.exceptions import UserError
 from odoo.tools.misc import ustr
 
@@ -11,7 +11,20 @@ _logger = logging.getLogger(__name__)
 class APIConnectInstances(models.Model):
     _name = 'api.connect.instances'
     _inherit = ['mail.thread']
-    _description = 'The config server information for API Viettel Post'
+    _description = 'This module is designed to allow your platform to integrate many different transport unit modules'
+
+    @api.depends('icon')
+    def _get_icon_image(self):
+        for instance in self:
+            instance.icon_image = ''
+            if instance.icon:
+                path_parts = instance.icon.split('/')
+                path = modules.get_module_resource(path_parts[1], *path_parts[2:])
+            else:
+                path = modules.module.get_module_icon(instance.name)
+            if path:
+                with tools.file_open(path, 'rb') as image_file:
+                    instance.icon_image = base64.b64encode(image_file.read())
 
     name = fields.Char(string='Name', required=True, tracking=True)
     code = fields.Char(string='Code', required=True, tracking=True)
@@ -20,6 +33,9 @@ class APIConnectInstances(models.Model):
     active = fields.Boolean(string='Active', default=True, tracking=True)
     user_name = fields.Char(string='Username', tracking=True)
     password = fields.Char(string='Password')
+    icon = fields.Char(string='Icon')
+    icon_image = fields.Binary(string='Icon', compute='_get_icon_image')
+    description = fields.Char(string='Description')
     endpoint_ids = fields.One2many('api.endpoint.config', 'instance_id', string='Endpoints')
 
     def btn_test_connection(self):
@@ -39,9 +55,6 @@ class APIConnectInstances(models.Model):
                 "sticky": False,
             },
         }
-
-    def generate_client_api(self, carrier_code: str):
-        raise NotImplementedError(_('Please implement the function to generate client API before use.'))
 
 
 class APIConnectHistory(models.Model):

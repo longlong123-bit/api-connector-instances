@@ -7,7 +7,7 @@
             <form>
                 <div class="oe_title">
                     <h1>
-                        <field name="deli_order_id" force_save="1"/>
+                        <field name="deli_order_id" force_save="1" tabindex="-1"/>
                     </h1>
                 </div>
                 <group>
